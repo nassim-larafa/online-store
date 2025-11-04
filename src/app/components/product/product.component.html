@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Our Products</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let product of products">
+      <div class="card h-100">
+        <img [src]="product.image || 'assets/images/no-image.png'" 
+             [alt]="product.name" 
+             class="card-img-top" 
+             style="height: 200px; object-fit: contain; padding: 1rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">
+            <strong>Code:</strong> {{ product.code }}<br>
+            <strong>Price:</strong> ${{ product.price }}<br>
+            <span class="badge bg-primary">In Stock: {{ product.quantity }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
