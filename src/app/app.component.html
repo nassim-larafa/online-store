@@ -1,58 +1,33 @@
-<div class="app-container min-vh-100 d-flex flex-column">
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm mb-4">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">
-        <i class="bi bi-shop me-2"></i>Online Store
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#"><i class="bi bi-house-door me-1"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-grid me-1"></i> Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-info-circle me-1"></i> About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-envelope me-1"></i> Contact</a>
-          </li>
-        </ul>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">Online Store</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <a class="btn btn-outline-light" routerLink="/signin" routerLinkActive="active">
+          <i class="bi bi-box-arrow-in-right me-1"></i> Sign In
+        </a>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Main Content -->
-  <main class="flex-grow-1 py-4">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold text-primary mb-3">{{ title }}</h1>
-        <p class="lead text-muted">Discover our amazing products at the best prices</p>
-      </div>
+<!-- Main Content -->
+<main class="container py-4">
+  <router-outlet></router-outlet>
+</main>
 
-      
-      
-      <!-- Router Outlet for dynamic content  <router-outlet></router-outlet>.  -->
-      
-    </div>
-    <app-product></app-product>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-light py-4 mt-auto">
-    <div class="container text-center text-muted">
-      <div class="mb-3">
-        <a href="#" class="text-decoration-none me-3"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="text-decoration-none me-3"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="text-decoration-none me-3"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="text-decoration-none"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <p class="mb-0">&copy; 2025 Online Store. All rights reserved.</p>
-    </div>
-  </footer>
-</div>
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-0">&copy; 2025 Online Store. All rights reserved.</p>
+  </div>
+</footer>
