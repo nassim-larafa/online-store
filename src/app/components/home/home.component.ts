@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  welcome: string = 'Welcome to our online store';
+  welcome: string = 'Welcome to our online store !';
   description: string = 'Discover our latest collection of smartphones from top brands';
   promotions: string[] = [
-    '20% off on all smartphones - Use code: SUMMER20',
-    'Free shipping on orders over $100',
-    'Buy one get one free on selected items'
+    'Get a free a case with every smartphone purchase',
+    'trade in your old phone and get up to 30% off',
+    'Free expedited shipping on all smartphones orders'
   ];
 }
