@@ -1,7 +1,6 @@
+
 <div class="container mt-4 bg-light p-4">
+    <button class="btn btn-success" (click)="onSignin()" [disabled]="isAuthenticated">SignIn</button>
 
-  <button class="btn btn-success me-2" (click)="signin()">Sign In</button>
-
-  <div class="mt-4">
-    <button class="btn btn-outline-danger" (click)="signout()">Sign Up</button>
-  </div>
+    <button class="btn btn-danger" (click)="onSignout()" [disabled]="!isAuthenticated">SignOut</button>
+</div>

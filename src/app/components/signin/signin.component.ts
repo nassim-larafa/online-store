@@ -4,22 +4,24 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  styleUrl: './signin.component.css'
 })
-export class SigninComponent implements OnInit {
-  isLoggedIn = false;
+export class SigninComponent  implements OnInit{
+  isAuthenticated!:boolean;
+    constructor(private authService:AuthService){}
 
-  constructor(private authService: AuthService) {}
-
-  ngOnInit() {
-    this.isLoggedIn = this.authService.isAuthenticated();
+  ngOnInit(): void {
+     this.isAuthenticated=this.authService.isAuthenticated();
   }
 
-  signin() {
-    this.authService.signin();
+  onSignin(){
+    this.authService.singIn();
+    this.isAuthenticated=this.authService.isAuthenticated();
+  }
+  onSignout(){
+    this.authService.singOut();
+     this.isAuthenticated=this.authService.isAuthenticated();
   }
 
-  signout() {
-    this.authService.signout();
-  }
+
 }
