@@ -4,16 +4,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private isAuth:boolean=false
+
+
+  private isAuth: boolean = false;
+
   constructor() { }
 
-  singIn(){
-      this.isAuth=true;
+  signIn() {
+    this.isAuth = true;
+
   }
-   singOut(){
-      this.isAuth=false
+  signOut() {
+    this.isAuth = false;
+
   }
-  isAuthenticated():boolean{
-     return this.isAuth
+  isAuthenticated(): boolean {
+    return this.isAuth
   }
 }

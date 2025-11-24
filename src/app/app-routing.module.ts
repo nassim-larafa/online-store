@@ -1,35 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { SigninComponent } from './components/signin/signin.component';
-import { ProductComponent } from './components/product/product.component';
-import { authGuard } from './guard/auth.guard';
+import { ProductsComponent } from './products/products.component';
+import { HomeComponent } from './home/home.component';
+import { SigninComponent } from './signin/signin.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { authGuard } from './guards/auth.guard';
+import { EditProductComponent } from './edit-product-component/edit-product-component.component';
 
 const routes: Routes = [
-  { 
-    path: '', 
-    redirectTo: '/home', 
-    pathMatch: 'full' 
-  },
-  { 
-    path: 'home', 
-    component: HomeComponent,
-    canActivate: [authGuard] 
-  },
-  { 
-    path: 'products', 
-    component: ProductComponent,
-    canActivate: [authGuard] 
-  },
-  { 
-    path: 'signin', 
-    component: SigninComponent 
-  },
-  { 
-    path: '**', 
-    redirectTo: '/home' 
-  }
+  {path:'',canActivate:[authGuard],component:HomeComponent},  
+  {path:'products',canActivate:[authGuard], component:ProductsComponent},
+  {path:'products/edit',canActivate:[authGuard], component:EditProductComponent},
+  {path:'signin',component:SigninComponent},
+  {path:"**",component:NotFoundComponent}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

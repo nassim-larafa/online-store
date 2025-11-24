@@ -9,7 +9,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "ignoreDeprecations": "5.0",
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,

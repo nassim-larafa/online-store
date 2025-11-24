@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "online-store": {
+    "onlinestore": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/online-store",
+            "outputPath": "dist/onlinestore",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -36,12 +36,11 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
-
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-                "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/jquery/dist/jquery.js"
             ]
           },
           "configurations": {
@@ -72,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "online-store:build:production"
+              "buildTarget": "onlinestore:build:production"
             },
             "development": {
-              "buildTarget": "online-store:build:development"
+              "buildTarget": "onlinestore:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "online-store:build"
+            "buildTarget": "onlinestore:build"
           }
         },
         "test": {

@@ -1,24 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './components/product/product.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HomeComponent } from './components/home/home.component';
-import { SigninComponent } from './components/signin/signin.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { HomeComponent } from './home/home.component';
+import { SigninComponent } from './signin/signin.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { EditProductComponent } from './edit-product-component/edit-product-component.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
+    ProductsComponent,
+    ProductDetailsComponent,
     HomeComponent,
-    SigninComponent
+    SigninComponent,
+    NotFoundComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
