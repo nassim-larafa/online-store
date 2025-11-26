@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './edit-product-component.component.html',
   styleUrls: ['./edit-product-component.component.css']
 })
+
 export class EditProductComponent implements OnInit {
   productForm: FormGroup;
 
@@ -44,7 +45,7 @@ export class EditProductComponent implements OnInit {
     }
   }
 
-  onCancel(): void {
-    this.router.navigate(['/products']);
-  }
+  // onCancel(): void {
+  //   this.router.navigate(['/products']);
+  // }
 }
