@@ -1,6 +1,5 @@
-// edit-product.component.ts
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Product } from '../shared/product';
 import { ProductService } from '../services/product.service';
 import { Router } from '@angular/router';
@@ -11,33 +10,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit-product-component.component.css']
 })
 
-export class EditProductComponent implements OnInit {
-  productForm: FormGroup;
+export class EditProductComponent {
+  product: Product = {
+    id: 0,
+    code: '',
+    name: '',
+    price: 0,
+    quantity: 0,
+    image: ''
+  };
 
   constructor(
-    private fb: FormBuilder,
     private productService: ProductService,
     private router: Router
-  ) {
-    this.productForm = this.fb.group({
-      code: ['', [Validators.required]],
-      name: ['', [Validators.required]],
-      price: [0, [Validators.required, Validators.min(0)]],
-      quantity: [0, [Validators.required, Validators.min(0), Validators.pattern('^[0-9]+$')]]
-    });
-  }
+  ) {}
 
-  ngOnInit(): void {}
-
-  onSubmit(): void {
-    if (this.productForm.valid) {
+  onSubmit(form: NgForm): void {
+    if (form.valid) {
       const newProduct = new Product(
         0, // L'ID sera généré par le service
-        this.productForm.value.code,
-        this.productForm.value.name,
-        this.productForm.value.price,
-        this.productForm.value.quantity,
-        this.productForm.value.image || ''
+        this.product.code,
+        this.product.name,
+        this.product.price,
+        this.product.quantity,
+        this.product.image || ''
       );
       
       this.productService.addProduct(newProduct);
